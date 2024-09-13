@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Мировые запчасти{% endblock %}
+
+{% block content %}
+
+
+    <div class="allinfo">
+
+        <div class="nameProduct">
+            <p class="namepr">{{ desc.name }}</p>
+        </div>
+        
+        <div class="pic">
+            {% autoescape off %}
+                {{ desc.img }}
+            {% endautoescape %}
+        </div>
+
+        <div class="pr">
+            <p class="price">{{ desc.price }}</p>
+        </div>
+
+        <div class="descr">
+            <p class="des">{{ desc.desc }}</p>
+        </div>
+            
+        </div>
+
+
+    </div>  
+
+        <div class="texttest">
+    
+    </div> 
+
+{% endblock %}

@@ -51,6 +51,8 @@ body{
     margin-bottom: auto;
 }
 
+
+
 .search{
     display: flex;
     margin-top: 15px;
@@ -61,15 +63,20 @@ body{
     justify-content: right;
 }
 
+.form_search{
+    width: 800px;
+}
+
+
 .input_search{
-    width: 500px;
+    width: 400px;
     height: 40px;
     border-radius: 20px;
     background-color: #FFFAFA;
     outline: none;
     border: none;
     padding: 0 20px;
-    margin-right: 230px;
+    margin-right: 200px;
 }
 
 
@@ -145,6 +152,9 @@ body{
     font-weight: bold;
 }
 
+
+
 .texttest{
     margin-top: 30px;
 }
+

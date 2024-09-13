@@ -51,66 +51,64 @@ body{
     margin-bottom: auto;
 }
 
-.date{
-    margin-top: 15px;
-    display: flex;
-    justify-content: center;
-}
 
-.orderdate{
-    font-size: 25px;
-    color: white;
-}
-
-
-.place{
-    display: flex;
-    justify-content: center;
-}
-
-.orderplace{
-    font-size: 25px;
-    color: white;
-}
-
-.bucketall{
-    display: grid;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.one{
-    width: 800px;
-    height: 100px;
-    border-radius: 20px;
+.allinfo{
+    width: 700px;
+    height: 400px;
     background-color: #868686;
-    display: flex;
-}
-
-.imgor{
-    width: 130px;
-    height: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
     border-radius: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 10px;
+
 }
 
-.name{
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 25px;
+.nameProduct{
+    display: flex;
+    justify-content: center;
+}
+
+.namepr{
+    color: black; 
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.pic{
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.picG{
+    width: 250px;
+    height: 200px;
+    border-radius: 20px;
+}
+
+.pr{
+    width: 150px;
+    position: relative;
+    bottom: 180px;
+    margin-left: 300px;
+}
+
+.price{
+    color: red;
     font-size: 24px;
     font-weight: bold;
 }
 
-.price{
+.descr{
     position: relative;
-    margin-top: auto;
-    margin-bottom: auto;
-    left: 130px;
-    color: #FFFFFF;   
+    bottom: 150px;
+    margin-left: 300px;
+
+}
+
+.des{
+    font-size: 20px;
+    color: #FFFFFF;
 }
 
 .texttest{

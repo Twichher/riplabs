@@ -1,63 +1,38 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>bucket</title>
-        {% comment %} <link rel="stylesheet" href="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\styles\stylebucket.css"> {% endcomment %}
-        <link rel="icon" type="image/png" sizes="32x32" href="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\icon1.png"/>
-    </head>
-    <body>
+{% block title %}Мировые запчасти{% endblock %}
 
-        <link rel="stylesheet" type="text/css" href="{% static 'main/stylebucket.css' %}">
-        
-        <div class="img1">
-            <img id="img1" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\djet.jpg"/>
+{% block content %}
+
+    <div class="date">
+        <p class="orderdate">Заказ на: 10.09.2024</p>
+    </div>
+
+    <div class="place">
+        <p class="orderplace">Адрес доставки: МГТУ</p>
+    </div>
+
+    <div class="bucketall">
+
+        {% for var in orders %}
+
+        <div class="one">
+
+            {% autoescape off %}
+                {{ var.img }}
+            {% endautoescape %}
+
+            <p class="name">{{ var.name }}</p>
+            <p class="price">{{ var.price }}</p>
         </div>
+
+        {% endfor %}
+
+
+    </div>
+
+    <div class="texttest">
     
-        <div class="navi">
-            <a href="https://www.google.com/">
-                <img id="icon" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\icon1.png">
-            </a>
-            <p id="headText">Мировые запчасти</p>
-        </div>
+    </div> 
 
-        <div class="date">
-            <p class="orderdate">Заказ на: 10.09.2024</p>
-        </div>
-
-        <div class="place">
-            <p class="orderplace">Адрес доставки: МГТУ</p>
-        </div>
-
-        <div class="bucketall">
-
-            <div class="one">
-                <img class="imgor" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\1.jpg">
-                <p class="name">Двигатель бензиновый DLE30</p>
-                <p class="price">42000 ₽</p>
-            </div>
-
-            <div class="one">
-                <img class="imgor" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\2.jpg">
-                <p class="name">Сервопривод EMAX ES08MDII</p>
-                <p class="price">1620 ₽</p>
-            </div>
-
-            <div class="one">
-                <img class="imgor" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\3.jpg">
-                <p class="name">Двигатель T-Motor AT4120</p>
-                <p class="price">11980 ₽</p>
-            </div>
-
-
-        </div>
-
-        <div class="texttest">
-           
-        </div> 
-
-    </body>
-</html>
+{% endblock %}

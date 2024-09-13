@@ -1,33 +1,18 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мировые запчасти</title>
-    {% comment %} <link rel="stylesheet" href="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\styles\style.css"/> {% endcomment %}
-    <link rel="icon" type="image/png" sizes="32x32" href="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\icon1.png"/>
-</head>
-<body>
+{% block title %}Мировые запчасти{% endblock %}
 
-    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
-    
-    <div class="img1">
-        <img id="img1" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\djet.jpg"/>
-    </div>
-
-    <div class="navi">
-        <a href="https://www.google.com/">
-            <img id="icon" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\icon1.png">
-        </a>
-        <p id="headText">Мировые запчасти</p>
-    </div>
+{% block content %}
 
     <div class="search">
-        <input class="input_search" type="text" name="text" placeholder="Поиск по цене">
-        <a href="https://www.google.com/">
-            <img class="imgBucket" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\bucketicon.png">
+
+        <form class="form_search">
+            <input class="input_search" type="text" name="search" placeholder="Поиск по названию">
+            <input type="submit" value="Submit" >
+        </form>
+        
+        <a href="{% url 'bucket' %}">
+            <img class="imgBucket" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvYnVja2V0aWNvbi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI3MTdaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT0zMWM5MWVlYTEwMDUwYWU5ZjIwMGEwZDViZTIyNjdkZDg5M2FkOGUzN2I3YTY4YjQzOTdhNWJlZDNmMjlmMzY0">
         </a>
     </div>
 
@@ -36,109 +21,34 @@
 
         <div class="container">
 
-            <div class="itemOfPr">
-                <div class="itemPic">
-                    <a href="https://www.google.com/">
-                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\1.jpg">
-                    </a>
-                </div>
-                <div class="itemName">
-                    <a class="itemDes" href="https://www.google.com/">
-                        Двигатель бензиновый DLE30
-                    </a>
-                </div>
-                <div class="itemPrice">
-                    <p class="price">42000 ₽</p>
-                </div>
-            </div>
+            {% for var in orders %}
 
             <div class="itemOfPr">
                 <div class="itemPic">
-                    <a href="https://www.google.com/">
-                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\2.jpg">
+                    <a href="{% url 'info' var.id %}">
+                        {% autoescape off %}
+                            {{ var.img }}
+                        {% endautoescape %}
                     </a>
                 </div>
                 <div class="itemName">
-                    <a class="itemDes" href="https://www.google.com/">
-                        Сервопривод EMAX ES08MDII
+                    <a class="itemDes" href="{% url 'info' var.id %}">
+                        {{ var.name }}
                     </a>
                 </div>
                 <div class="itemPrice">
-                    <p class="price">1620 ₽</p>
+                    <p class="price">{{ var.price }}</p>
                 </div>
+
             </div>
 
-            <div class="itemOfPr">
-                <div class="itemPic">
-                    <a href="https://www.google.com/">
-                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\3.jpg">
-                    </a>
-                </div>
-                <div class="itemName">
-                    <a class="itemDes" href="https://www.google.com/">
-                        Двигатель T-Motor AT4120
-                    </a>
-                </div>
-                <div class="itemPrice">
-                    <p class="price">11980 ₽</p>
-                </div>
-            </div>
-
-            <div class="itemOfPr">
-                <div class="itemPic">
-                    <a href="https://www.google.com/">
-                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\4.jpg">
-                    </a>
-                </div>
-                <div class="itemName">
-                    <a class="itemDes" href="https://www.google.com/">
-                        Адаптер для пропеллера
-                    </a>
-                </div>
-                <div class="itemPrice">
-                    <p class="price">42770 ₽</p>
-                </div>
-            </div>
-
-            <div class="itemOfPr">
-                <div class="itemPic">
-                    <a href="https://www.google.com/">
-                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\5.jpg">
-                    </a>
-                </div>
-                <div class="itemName">
-                    <a class="itemDes" href="https://www.google.com/">
-                        Двигатель бензиновый DLE60
-                    </a>
-                </div>
-                <div class="itemPrice">
-                    <p class="price">152380 ₽</p>
-                </div>
-            </div>
-
-            <div class="itemOfPr">
-                <div class="itemPic">
-                    <a href="https://www.google.com/">
-                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\6.jpg">
-                    </a>
-                </div>
-                <div class="itemName">
-                    <a class="itemDes" href="https://www.google.com/">
-                        Модуль для программ регуляторов
-                    </a>
-                </div>
-                <div class="itemPrice">
-                    <p class="price">4540 ₽</p>
-                </div>
-            </div>
+            {% endfor %}
 
         </div>
     </div>
-    
+
     <div class="texttest">
-           
+        
     </div> 
 
-
-</body>
-</html>
+{% endblock%}

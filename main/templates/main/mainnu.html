@@ -1,0 +1,145 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мировые запчасти</title>
+    {% comment %} <link rel="stylesheet" href="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\styles\style.css"/> {% endcomment %}
+    <link rel="icon" type="image/png" sizes="32x32" href="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvaWNvbjEucG5nP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9RzRSTURHV0xaRDFWTE9VRTJMTDklMkYyMDI0MDkxMyUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA5MTNUMTc0MTI5WiZYLUFtei1FeHBpcmVzPTQzMTk5JlgtQW16LVNlY3VyaXR5LVRva2VuPWV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpoWTJObGMzTkxaWGtpT2lKSE5GSk5SRWRYVEZwRU1WWk1UMVZGTWt4TU9TSXNJbVY0Y0NJNk1UY3lOakk1TURjMk9Td2ljR0Z5Wlc1MElqb2lZV1J0YVc0aWZRLkRuUDRQRlN5RGJQT2h0RFBtV2lkWV9lWVZ1WUhkaVhnZzhrY2FOWU4tTzFJeGFJTE5oYkpza1VGWUlkeEtMT0V2LWxwOTFWSWd0eTlRMGQ4RnFuWHNBJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZ2ZXJzaW9uSWQ9bnVsbCZYLUFtei1TaWduYXR1cmU9Y2MyYTViMjkxMzAwMmVlMjc5MGU0OGVmOGRiNTExMjA3OWU4OGVjMTg3YjQ3MDExZTVkNmYyMWU0MjBjOTU5OA"/>
+</head>
+<body>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}">
+    
+    <div class="img1">
+        <img id="img1" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\djet.jpg"/>
+    </div>
+
+    <div class="navi">
+        <a href="https://www.google.com/">
+            <img id="icon" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\icon1.png">
+        </a>
+        <p id="headText">Мировые запчасти</p>
+    </div>
+
+    <div class="search">
+        <input class="input_search" type="text" name="text" placeholder="Поиск по цене">
+        <a href="https://www.google.com/">
+            <img class="imgBucket" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\bucketicon.png">
+        </a>
+    </div>
+
+
+    <div class="space">
+
+        <div class="container">
+
+            <div class="itemOfPr">
+                <div class="itemPic">
+                    <a href="https://www.google.com/">
+                        <img class="img_goods" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvMS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QxNzE0NDZaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT01MDNlOTcyMTEzOTE0ZDFjMzg5Yjc1NjJmYTExYjg0ODc5N2UzZGJiZDYxM2RlMDgxNGU2YTIzYmZhZDllM2Nh">
+                        
+                    </a>
+                </div>
+                <div class="itemName">
+                    <a class="itemDes" href="https://www.google.com/">
+                        Двигатель бензиновый DLE30
+                    </a>
+                </div>
+                <div class="itemPrice">
+                    <p class="price">42000 ₽</p>
+                </div>
+            </div>
+
+            <div class="itemOfPr">
+                <div class="itemPic">
+                    <a href="https://www.google.com/">
+                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\2.jpg">
+                    </a>
+                </div>
+                <div class="itemName">
+                    <a class="itemDes" href="https://www.google.com/">
+                        Сервопривод EMAX ES08MDII
+                    </a>
+                </div>
+                <div class="itemPrice">
+                    <p class="price">1620 ₽</p>
+                </div>
+            </div>
+
+            <div class="itemOfPr">
+                <div class="itemPic">
+                    <a href="https://www.google.com/">
+                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\3.jpg">
+                    </a>
+                </div>
+                <div class="itemName">
+                    <a class="itemDes" href="https://www.google.com/">
+                        Двигатель T-Motor AT4120
+                    </a>
+                </div>
+                <div class="itemPrice">
+                    <p class="price">11980 ₽</p>
+                </div>
+            </div>
+
+            <div class="itemOfPr">
+                <div class="itemPic">
+                    <a href="https://www.google.com/">
+                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\4.jpg">
+                    </a>
+                </div>
+                <div class="itemName">
+                    <a class="itemDes" href="https://www.google.com/">
+                        Адаптер для пропеллера
+                    </a>
+                </div>
+                <div class="itemPrice">
+                    <p class="price">42770 ₽</p>
+                </div>
+            </div>
+
+            <div class="itemOfPr">
+                <div class="itemPic">
+                    <a href="https://www.google.com/">
+                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\5.jpg">
+                    </a>
+                </div>
+                <div class="itemName">
+                    <a class="itemDes" href="https://www.google.com/">
+                        Двигатель бензиновый DLE60
+                    </a>
+                </div>
+                <div class="itemPrice">
+                    <p class="price">152380 ₽</p>
+                </div>
+            </div>
+
+            <div class="itemOfPr">
+                <div class="itemPic">
+                    <a href="https://www.google.com/">
+                        <img class="img_goods" src="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\images\6.jpg">
+                    </a>
+                </div>
+                <div class="itemName">
+                    <a class="itemDes" href="https://www.google.com/">
+                        Модуль для программ регуляторов
+                    </a>
+                </div>
+                <div class="itemPrice">
+                    <p class="price">4540 ₽</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="texttest">
+           
+    </div> 
+
+
+</body>
+</html>
