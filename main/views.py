@@ -6,8 +6,6 @@ from django.http import HttpResponse
 
 
 def main(request):
-
-
     context_d = {
             'title': 'main',
             'orders' : [
