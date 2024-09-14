@@ -6,13 +6,19 @@
 
     <div class="search">
 
-        <form class="form_search">
-            <input class="input_search" type="text" name="search" placeholder="Поиск по названию">
+        {% comment %} <form class="form_search" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input class="input_search" type="text" name="text" placeholder="Поиск по названию">
             <input type="submit" value="Submit" >
+        </form> {% endcomment %}
+
+        <form action="" class="form_search"  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input name="text" placeholder="Поиск по названию" type="text" class="input_search" value={{ value }}><br><br>
         </form>
         
         <a href="{% url 'bucket' %}">
-            <img class="imgBucket" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvYnVja2V0aWNvbi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI3MTdaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT0zMWM5MWVlYTEwMDUwYWU5ZjIwMGEwZDViZTIyNjdkZDg5M2FkOGUzN2I3YTY4YjQzOTdhNWJlZDNmMjlmMzY0">
+            <img class="imgBucket" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=shopping-basket_8216703.png&version_id=null">
         </a>
     </div>
 

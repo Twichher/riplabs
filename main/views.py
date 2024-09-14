@@ -3,31 +3,62 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+
+
 def main(request):
+
+
     context_d = {
-        'title': 'main',
-        'orders' : [
-            {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'img':'<img class="img_goods" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvMS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QxNzE0NDZaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT01MDNlOTcyMTEzOTE0ZDFjMzg5Yjc1NjJmYTExYjg0ODc5N2UzZGJiZDYxM2RlMDgxNGU2YTIzYmZhZDllM2Nh">'  ,'id': 1},
-            {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI0MzRaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT03MGFmNjVjZGZjOWUzOTU2MGQ4NTk4ZmMxZmRmZjQ2NGZmZjU5MmZmYTAxYjA3MmJhNTUwNzhkYTViNzE4NGI0">', 'id': 2},
-            {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvMy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI0NDlaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT0zMDA4NzAzYTY5ODZmNTc3YjgwNGMzZjI2MTJkYmY1MTc4MmFmZWU1Y2IwZjIyZDhiZjUwNDJiNmU4YTBiNjMw">', 'id': 3},
-            {'name':'Адаптер для пропеллера', 'price': '42770 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvNC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI1MDRaJlgtQW16LUV4cGlyZXM9NDMxOTkmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT1hODI2Y2Q4N2UxMjk4YzU1ODBmNGYyNGUyZDQ5YzFjNTZjZmY0NTNhZjkwYmMyN2E2ZjIxMWZhNDU1YzhiNjYz">', 'id': 4},
-            {'name':'Двигатель бензиновый DLE60', 'price': '152380 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvNS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI1MTVaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT0wZjhkNjFiZTBmZTFlNmRiMzA2OWRiOTliNjJkZjE0MDAzMDIzY2Y4MjlkM2Y3YzQyMTdiZGUxMDNmMDU3MmVj">', 'id': 5},
-            {'name':'Модуль для программ регуляторов', 'price': '4540 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvNi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI1MjdaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT1mYTY0OGQwOTVhYmUyZWFjMTI5ODFkMTU4MGYwODY4N2U1MDhhYTg1OGM4OGZmYjFiMmJiNjc3YTJmMzkzZWZl">', 'id': 6},
-        ]
+            'title': 'main',
+            'orders' : [
+                {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'img':'<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=1.jpg&version_id=null">'  ,'id': 1},
+                {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=2.jpg&version_id=null">', 'id': 2},
+                {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=3.jpg&version_id=null">', 'id': 3},
+                {'name':'Адаптер для пропеллера', 'price': '42770 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=4.jpg&version_id=null">', 'id': 4},
+                {'name':'Двигатель бензиновый DLE60', 'price': '152380 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=5.jpg&version_id=null">', 'id': 5},
+                {'name':'Модуль для программ регуляторов', 'price': '4540 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=6.jpg&version_id=null">', 'id': 6},
+            ],
+            'value':'',
     }
 
-    return render(request, 'main.html', context_d)
+    if request.method == 'GET':
+
+        return render(request, 'main.html', context_d)
+    
+    else:
+
+        #print(request.POST.get('text'))
+        context_d['value'] = str(request.POST.get('text')).lower().capitalize()
+
+        goods = {
+            'title':'main',
+            'orders':[
+
+            ],
+            'value':str(request.POST.get('text')).lower().capitalize(),
+        }
+
+        for var in context_d['orders']:
+            if context_d['value'] in var['name']:
+                goods['orders'].append(var)
+
+        # for i in goods['orders']:
+        #     print(i['name'])
+
+
+        return render(request, 'main.html', goods)
+
 
 def info(request, id):
     context_d ={
         'title':'info',
         'desc' : [
-            {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'desc':'Бензиновый двигатель от известного производителя моторов DLE, рекомендованный для использования на небольших самолётах.', 'img':'<img class="picG" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvMS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QxNzE0NDZaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT01MDNlOTcyMTEzOTE0ZDFjMzg5Yjc1NjJmYTExYjg0ODc5N2UzZGJiZDYxM2RlMDgxNGU2YTIzYmZhZDllM2Nh">'  ,'id': 1},
-            {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'desc':'Небольшой по размерам и по мощности сервопривод, Futaba/JR-совместимый.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI0MzRaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT03MGFmNjVjZGZjOWUzOTU2MGQ4NTk4ZmMxZmRmZjQ2NGZmZjU5MmZmYTAxYjA3MmJhNTUwNzhkYTViNzE4NGI0">', 'id': 2},
-            {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'desc':'Бесколлекторный высокоэффективный двигатель, рекомендуемый к использованию с пропеллерами 15"-16".', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvMy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI0NDlaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT0zMDA4NzAzYTY5ODZmNTc3YjgwNGMzZjI2MTJkYmY1MTc4MmFmZWU1Y2IwZjIyZDhiZjUwNDJiNmU4YTBiNjMw">', 'id': 3},
-            {'name':'Адаптер для пропеллера', 'price': '42770 ₽', 'desc':'Алюминиевый адаптер для тянущих пропеллеров. Устанавливается на вал диаметром 5мм. Используется для лопастей с осевым отверстием 3 мм.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvNC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI1MDRaJlgtQW16LUV4cGlyZXM9NDMxOTkmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT1hODI2Y2Q4N2UxMjk4YzU1ODBmNGYyNGUyZDQ5YzFjNTZjZmY0NTNhZjkwYmMyN2E2ZjIxMWZhNDU1YzhiNjYz">', 'id': 4},
-            {'name':'Двигатель бензиновый DLE60', 'price': '152380 ₽', 'desc':'Бензиновый двигатель от известного производителя моторов DLE, рекомендованный для использования на больших самолётах, таких как VolJet VT10 и VolJet VT20.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvNS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI1MTVaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT0wZjhkNjFiZTBmZTFlNmRiMzA2OWRiOTliNjJkZjE0MDAzMDIzY2Y4MjlkM2Y3YzQyMTdiZGUxMDNmMDU3MmVj">', 'id': 5},
-            {'name':'Модуль для программ регуляторов', 'price': '4540 ₽', 'desc':'Модуль Hobbywing Program Card предназначен для программирования бесколлекторных регуляторов HobbyWing. Дружественный интерфейс делает программирование ESC простым и быстрым.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvNi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI1MjdaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT1mYTY0OGQwOTVhYmUyZWFjMTI5ODFkMTU4MGYwODY4N2U1MDhhYTg1OGM4OGZmYjFiMmJiNjc3YTJmMzkzZWZl">', 'id': 6},
+            {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'desc':'Бензиновый двигатель от известного производителя моторов DLE, рекомендованный для использования на небольших самолётах.', 'img':'<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=1.jpg&version_id=null">'  ,'id': 1},
+            {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'desc':'Небольшой по размерам и по мощности сервопривод, Futaba/JR-совместимый.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=2.jpg&version_id=null">', 'id': 2},
+            {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'desc':'Бесколлекторный высокоэффективный двигатель, рекомендуемый к использованию с пропеллерами 15"-16".', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=3.jpg&version_id=null">', 'id': 3},
+            {'name':'Адаптер для пропеллера', 'price': '42770 ₽', 'desc':'Алюминиевый адаптер для тянущих пропеллеров. Устанавливается на вал диаметром 5мм. Используется для лопастей с осевым отверстием 3 мм.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=4.jpg&version_id=null">', 'id': 4},
+            {'name':'Двигатель бензиновый DLE60', 'price': '152380 ₽', 'desc':'Бензиновый двигатель от известного производителя моторов DLE, рекомендованный для использования на больших самолётах, таких как VolJet VT10 и VolJet VT20.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=5.jpg&version_id=null">', 'id': 5},
+            {'name':'Модуль для программ регуляторов', 'price': '4540 ₽', 'desc':'Модуль Hobbywing Program Card предназначен для программирования бесколлекторных регуляторов HobbyWing. Дружественный интерфейс делает программирование ESC простым и быстрым.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=6.jpg&version_id=null">', 'id': 6},
         ]
     }
 
@@ -36,8 +67,6 @@ def info(request, id):
         'desc': context_d['desc'][id-1]
     }
 
-    print(con_ready)
-
     return render(request, 'info.html', con_ready)
 
 def bucket(request):
@@ -45,9 +74,9 @@ def bucket(request):
     context_d = {
         'title':'bucket',
         'orders' : [
-            {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'img':'<img class="imgor" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvMS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QxNzE0NDZaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT01MDNlOTcyMTEzOTE0ZDFjMzg5Yjc1NjJmYTExYjg0ODc5N2UzZGJiZDYxM2RlMDgxNGU2YTIzYmZhZDllM2Nh">'  ,'id': 1},
-            {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'img': '<img class="imgor" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvMi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI0MzRaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT03MGFmNjVjZGZjOWUzOTU2MGQ4NTk4ZmMxZmRmZjQ2NGZmZjU5MmZmYTAxYjA3MmJhNTUwNzhkYTViNzE4NGI0">', 'id': 2},
-            {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'img': '<img class="imgor" src="http://127.0.0.1:9001/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3Rlc3QvMy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1HNFJNREdXTFpEMVZMT1VFMkxMOSUyRjIwMjQwOTEzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDkxM1QyMDI0NDlaJlgtQW16LUV4cGlyZXM9NDMyMDAmWC1BbXotU2VjdXJpdHktVG9rZW49ZXlKaGJHY2lPaUpJVXpVeE1pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmhZMk5sYzNOTFpYa2lPaUpITkZKTlJFZFhURnBFTVZaTVQxVkZNa3hNT1NJc0ltVjRjQ0k2TVRjeU5qSTVNRGMyT1N3aWNHRnlaVzUwSWpvaVlXUnRhVzRpZlEuRG5QNFBGU3lEYlBPaHREUG1XaWRZX2VZVnVZSGRpWGdnOGtjYU5ZTi1PMUl4YUlMTmhiSnNrVUZZSWR4S0xPRXYtbHA5MVZJZ3R5OVEwZDhGcW5Yc0EmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JnZlcnNpb25JZD1udWxsJlgtQW16LVNpZ25hdHVyZT0zMDA4NzAzYTY5ODZmNTc3YjgwNGMzZjI2MTJkYmY1MTc4MmFmZWU1Y2IwZjIyZDhiZjUwNDJiNmU4YTBiNjMw">', 'id': 3},
+            {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'img':'<img class="imgor" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=1.jpg&version_id=null">'  ,'id': 1},
+            {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'img': '<img class="imgor" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=2.jpg&version_id=null">', 'id': 2},
+            {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'img': '<img class="imgor" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=3.jpg&version_id=null">', 'id': 3},
         ]
 
     }
