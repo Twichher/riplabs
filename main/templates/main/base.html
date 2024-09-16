@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %} {% endblock %}</title>
     {% comment %} <link rel="stylesheet" href="C:\Users\vladi\OneDrive\Рабочий стол\RIP\lab1\styles\style.css"/> {% endcomment %}
-    <link rel="icon" type="image/png" sizes="32x32" href="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=icon1.png&version_id=null"/>
+    <link rel="icon" type="image/png" sizes="32x32" href="http://127.0.0.1:9000/mysite2/icon1.png"/>
 </head>
 <body>
 
@@ -19,20 +19,20 @@
         <link rel="stylesheet" type="text/css" href="{% static 'main/bucket.css' %}">
     {% endif %}
 
-    <div class="header">
+    <header>
 
         <div class="img1">
-            <img id="img1" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=djet.jpg&version_id=null"/>
+            <img id="img1" src="http://127.0.0.1:9000/mysite2/djet.jpg"/>
         </div>
 
         <div class="navi">
             <a href="{% url 'main' %}">
-                <img id="icon" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=icon1.png&version_id=null">
+                <img id="icon" src="http://127.0.0.1:9000/mysite2/icon1.png">
             </a>
             <p id="headText">Мировые запчасти</p>
         </div>
 
-    </div>
+    </header>
 
     {% block content %}{% endblock %}
 

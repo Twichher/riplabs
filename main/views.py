@@ -9,12 +9,12 @@ def main(request):
     context_d = {
             'title': 'main',
             'orders' : [
-                {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'img':'<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=1.jpg&version_id=null">'  ,'id': 1},
-                {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=2.jpg&version_id=null">', 'id': 2},
-                {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=3.jpg&version_id=null">', 'id': 3},
-                {'name':'Адаптер для пропеллера', 'price': '42770 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=4.jpg&version_id=null">', 'id': 4},
-                {'name':'Двигатель бензиновый DLE60', 'price': '152380 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=5.jpg&version_id=null">', 'id': 5},
-                {'name':'Модуль для программ регуляторов', 'price': '4540 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=6.jpg&version_id=null">', 'id': 6},
+                {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'img':'<img class="img_goods" src="http://127.0.0.1:9000/mysite2/1.jpg">'  ,'id': 1},
+                {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9000/mysite2/2.jpg">', 'id': 2},
+                {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9000/mysite2/3.jpg">', 'id': 3},
+                {'name':'Адаптер для пропеллера', 'price': '42770 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9000/mysite2/4.jpg">', 'id': 4},
+                {'name':'Двигатель бензиновый DLE60', 'price': '152380 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9000/mysite2/5.jpg">', 'id': 5},
+                {'name':'Модуль для программ регуляторов', 'price': '4540 ₽', 'img': '<img class="img_goods" src="http://127.0.0.1:9000/mysite2/6.jpg">', 'id': 6},
             ],
             'value':'',
     }
@@ -51,12 +51,12 @@ def info(request, id):
     context_d ={
         'title':'info',
         'desc' : [
-            {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'desc':'Бензиновый двигатель от известного производителя моторов DLE, рекомендованный для использования на небольших самолётах.', 'img':'<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=1.jpg&version_id=null">'  ,'id': 1},
-            {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'desc':'Небольшой по размерам и по мощности сервопривод, Futaba/JR-совместимый.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=2.jpg&version_id=null">', 'id': 2},
-            {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'desc':'Бесколлекторный высокоэффективный двигатель, рекомендуемый к использованию с пропеллерами 15"-16".', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=3.jpg&version_id=null">', 'id': 3},
-            {'name':'Адаптер для пропеллера', 'price': '42770 ₽', 'desc':'Алюминиевый адаптер для тянущих пропеллеров. Устанавливается на вал диаметром 5мм. Используется для лопастей с осевым отверстием 3 мм.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=4.jpg&version_id=null">', 'id': 4},
-            {'name':'Двигатель бензиновый DLE60', 'price': '152380 ₽', 'desc':'Бензиновый двигатель от известного производителя моторов DLE, рекомендованный для использования на больших самолётах, таких как VolJet VT10 и VolJet VT20.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=5.jpg&version_id=null">', 'id': 5},
-            {'name':'Модуль для программ регуляторов', 'price': '4540 ₽', 'desc':'Модуль Hobbywing Program Card предназначен для программирования бесколлекторных регуляторов HobbyWing. Дружественный интерфейс делает программирование ESC простым и быстрым.', 'img': '<img class="picG" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=6.jpg&version_id=null">', 'id': 6},
+            {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'desc':'Бензиновый двигатель от известного производителя моторов DLE, рекомендованный для использования на небольших самолётах.', 'img':'<img class="picG" src="http://127.0.0.1:9000/mysite2/1.jpg">'  ,'id': 1},
+            {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'desc':'Небольшой по размерам и по мощности сервопривод, Futaba/JR-совместимый.', 'img': '<img class="picG" src="http://127.0.0.1:9000/mysite2/2.jpg">', 'id': 2},
+            {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'desc':'Бесколлекторный высокоэффективный двигатель, рекомендуемый к использованию с пропеллерами 15"-16".', 'img': '<img class="picG" src="http://127.0.0.1:9000/mysite2/3.jpg">', 'id': 3},
+            {'name':'Адаптер для пропеллера', 'price': '42770 ₽', 'desc':'Алюминиевый адаптер для тянущих пропеллеров. Устанавливается на вал диаметром 5мм. Используется для лопастей с осевым отверстием 3 мм.', 'img': '<img class="picG" src="http://127.0.0.1:9000/mysite2/4.jpg">', 'id': 4},
+            {'name':'Двигатель бензиновый DLE60', 'price': '152380 ₽', 'desc':'Бензиновый двигатель от известного производителя моторов DLE, рекомендованный для использования на больших самолётах, таких как VolJet VT10 и VolJet VT20.', 'img': '<img class="picG" src="http://127.0.0.1:9000/mysite2/5.jpg">', 'id': 5},
+            {'name':'Модуль для программ регуляторов', 'price': '4540 ₽', 'desc':'Модуль Hobbywing Program Card предназначен для программирования бесколлекторных регуляторов HobbyWing. Дружественный интерфейс делает программирование ESC простым и быстрым.', 'img': '<img class="picG" src="http://127.0.0.1:9000/mysite2/6.jpg">', 'id': 6},
         ]
     }
 
@@ -72,9 +72,9 @@ def bucket(request):
     context_d = {
         'title':'bucket',
         'orders' : [
-            {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'img':'<img class="imgor" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=1.jpg&version_id=null">'  ,'id': 1},
-            {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'img': '<img class="imgor" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=2.jpg&version_id=null">', 'id': 2},
-            {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'img': '<img class="imgor" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=3.jpg&version_id=null">', 'id': 3},
+            {'name':'Двигатель бензиновый DLE30', 'price': '42000 ₽', 'img':'<img class="imgor" src="http://127.0.0.1:9000/mysite2/1.jpg">'  ,'id': 1},
+            {'name':'Сервопривод EMAX ES08MDII', 'price': '1620 ₽', 'img': '<img class="imgor" src="http://127.0.0.1:9000/mysite2/2.jpg">', 'id': 2},
+            {'name':'Двигатель T-Motor AT4120', 'price': '11980 ₽', 'img': '<img class="imgor" src="http://127.0.0.1:9000/mysite2/3.jpg">', 'id': 3},
         ]
 
     }

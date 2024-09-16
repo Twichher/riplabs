@@ -17,8 +17,11 @@
             <input name="text" placeholder="Поиск по названию" type="text" class="input_search" value={{ value }}><br><br>
         </form>
         
-        <a href="{% url 'bucket' %}">
-            <img class="imgBucket" src="http://127.0.0.1:9001/api/v1/buckets/test/objects/download?preview=true&prefix=shopping-basket_8216703.png&version_id=null">
+        <a href="{% url 'bucket' %}" class="buck">
+            <div class="btn_buck">
+                <p class="namebuck">Корзина: {{  }}</p>
+                <img class="imgBucket" src="http://127.0.0.1:9000/mysite2/shopping-basket_8216703.png">
+            </div>
         </a>
     </div>
 
