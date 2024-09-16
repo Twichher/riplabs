@@ -8,21 +8,19 @@
     <div class="allinfo">
 
         <div class="nameProduct">
-            <p class="namepr">{{ desc.name }}</p>
+            <p class="namepr">{{ orders.name }}</p>
         </div>
         
         <div class="pic">
-            {% autoescape off %}
-                {{ desc.img }}
-            {% endautoescape %}
+            <img class="picG" src="{{ orders.img }}">
         </div>
 
         <div class="pr">
-            <p class="price">{{ desc.price }}</p>
+            <p class="price">{{ orders.price }}</p>
         </div>
 
         <div class="descr">
-            <p class="des">{{ desc.desc }}</p>
+            <p class="des">{{ orders.desc }}</p>
         </div>
             
         </div>

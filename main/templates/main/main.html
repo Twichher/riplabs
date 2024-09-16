@@ -19,7 +19,7 @@
         
         <a href="{% url 'bucket' %}" class="buck">
             <div class="btn_buck">
-                <p class="namebuck">Корзина: {{  }}</p>
+                <p class="namebuck">Корзина:{{ buck }}</p>
                 <img class="imgBucket" src="http://127.0.0.1:9000/mysite2/shopping-basket_8216703.png">
             </div>
         </a>
@@ -35,9 +35,7 @@
             <div class="itemOfPr">
                 <div class="itemPic">
                     <a href="{% url 'info' var.id %}">
-                        {% autoescape off %}
-                            {{ var.img }}
-                        {% endautoescape %}
+                        <img class="img_goods" src="{{ var.img }}">
                     </a>
                 </div>
                 <div class="itemName">
