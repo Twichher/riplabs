@@ -34,7 +34,7 @@ def get_info(title):
 
 
 
-def main(request):
+def spares(request):
 
     context_d = get_info('main')
     context_d['buck'] = len(get_buck()['orders'])
@@ -67,7 +67,7 @@ def main(request):
         return render(request, 'main.html', goods)
 
 
-def info(request, id):
+def spare(request, id):
 
     context_d = get_info('info')
 

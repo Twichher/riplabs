@@ -12,7 +12,7 @@
             <input type="submit" value="Submit" >
         </form> {% endcomment %}
 
-        <form action="" class="form_search"  method="post" enctype="multipart/form-data">
+        <form action="" class="form_search_spares"  method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <input name="text" placeholder="Поиск по названию" type="text" class="input_search" value={{ value }}><br><br>
         </form>

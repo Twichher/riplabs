@@ -68,8 +68,9 @@ body{
     justify-content: right;
 }
 
-.form_search{
-    width: 627px;
+.form_search_spares{
+    width: 600px;
+    margin-right: 30px;
 }
 
 
